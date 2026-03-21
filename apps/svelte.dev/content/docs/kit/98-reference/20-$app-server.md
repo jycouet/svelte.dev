@@ -7,14 +7,7 @@ title: $app/server
 
 ```js
 // @noErrors
-import {
-	command,
-	form,
-	getRequestEvent,
-	prerender,
-	query,
-	read
-} from '$app/server';
+import { command, form, prerender, query, read } from '$app/server';
 ```
 
 ## command
@@ -118,28 +111,6 @@ function form<
 		issue: InvalidField<StandardSchemaV1.InferInput<Schema>>
 	) => MaybePromise<Output>
 ): RemoteForm<StandardSchemaV1.InferInput<Schema>, Output>;
-```
-
-</div>
-
-
-
-## getRequestEvent
-
-<blockquote class="since note">
-
-Available since 2.20.0
-
-</blockquote>
-
-Returns the current `RequestEvent`. Can be used inside server hooks, server `load` functions, actions, and endpoints (and functions called by them).
-
-In environments without [`AsyncLocalStorage`](https://nodejs.org/api/async_context.html#class-asynclocalstorage), this must be called synchronously (i.e. not after an `await`).
-
-<div class="ts-block">
-
-```dts
-function getRequestEvent(): RequestEvent;
 ```
 
 </div>
